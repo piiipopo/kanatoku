@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ぴこさんのかなトク！管理</title>
-    <script src="https://tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- アイコン（カート🛒）の設定 -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text y='72' x='15' font-size='65'>🛒</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://w3.org' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text y='72' x='15' font-size='65'>🛒</text></svg>">
-    <link rel="manifest" href="data:application/json,{'name':'かなトク！管理','short_name':'かなトク！','start_url':'.','display':'standalone','icons':[{'src':'data:image/svg+xml,<svg xmlns=\'http://w3.org\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' rx=\'22\' fill=\'%236366f1\'/><text y=\'72\' x=\'15\' font-size=\'65\'>🛒</text></svg>','sizes':'192x192','type':'image/svg+xml'}]}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text y='72' x='15' font-size='65'>🛒</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text y='72' x='15' font-size='65'>🛒</text></svg>">
+    <link rel="manifest" href="data:application/json,{'name':'かなトク！管理','short_name':'かなトク！','start_url':'.','display':'standalone','icons':[{'src':'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' rx=\'22\' fill=\'%236366f1\'/><text y=\'72\' x=\'15\' font-size=\'65\'>🛒</text></svg>','sizes':'192x192','type':'image/svg+xml'}]}">
 
     <style>
         body { touch-action: manipulation; }
@@ -29,9 +29,9 @@
 
     <main class="p-4 max-w-md mx-auto">
         <!-- アプリ別ステータス -->
-        <section class="mb-4">
+        <section class="mb-6">
             <h2 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-1.5">
-                <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0 0 13.5 3v7.5Z" />
                 </svg>
@@ -42,26 +42,10 @@
             </div>
         </section>
 
-        <!-- 【追加】対象店舗検索リンクボタン -->
-        <section class="mb-6">
-            <a href="https://pref.kanagawa.jp" target="_blank" rel="noopener noreferrer" 
-               class="flex items-center justify-between w-full bg-indigo-50 hover:bg-indigo-100 border border-indigo-100 rounded-xl p-3 text-indigo-700 transition-all active:scale-98">
-                <div class="flex items-center gap-2">
-                    <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-indigo-600">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.604 10.604Z" />
-                    </svg>
-                    <span class="text-xs font-bold">かなトク！公式で対象店舗を検索</span>
-                </div>
-                <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-3.5 h-3.5 text-indigo-500">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-            </a>
-        </section>
-
         <!-- 入力フォーム -->
         <section class="bg-white rounded-2xl shadow-sm p-5 mb-6 border border-gray-100">
             <h2 class="text-sm font-bold text-gray-600 mb-4 flex items-center gap-1.5">
-                <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
                 買い物を記録する
@@ -98,7 +82,7 @@
                     </div>
                 </div>
 
-                <!-- 還元率の選択 -->
+                <!-- 還元率の選択を追加 -->
                 <div class="mb-4">
                     <label class="block text-xs font-bold text-gray-500 mb-2">店舗の還元率</label>
                     <div class="flex gap-2">
@@ -126,14 +110,246 @@
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-500 mb-1.5" for="shop">店舗名 <span class="text-[10px] font-normal text-gray-400">(任意)</span></label>
-                        <input type="text" id="shop" placeholder="例: まいばす"
+                        <input type="text" id="shop" placeholder="例: 〇〇スーパー"
                             class="w-full bg-slate-50 border border-gray-200 rounded-xl p-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-gray-300">
                     </div>
                 </div>
 
-                <!-- 金額入力（復元） -->
+                <!-- 金額 -->
                 <div class="mb-5">
-                    <label class="block text-xs font-bold text-gray-500 mb-1.5" for="amount">買い物金額 (税込)</label>
-                    <div class="relative flex items-center">
-                        <input type="number" id="amount" inputmode="numeric" required placeholder="0"
-                            class="w-full bg-slate-50 border border-gray-200 rounded-xl p-3.5 pr-10 text-lg font-bold text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-gray-300">
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5" for="amount">買い物金額（税込）</label>
+                    <div class="relative">
+                        <input type="number" id="amount" pattern="\d*" placeholder="例: 1500" required
+                            class="w-full bg-slate-50 border border-gray-200 rounded-xl p-3.5 pr-10 text-lg font-bold text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-gray-300 placeholder:font-normal">
+                        <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-bold">円</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-md shadow-indigo-200 transition-all active:scale-[0.98] active:shadow-none flex justify-center items-center gap-2">
+                    記録する
+                </button>
+            </form>
+        </section>
+
+        <!-- 履歴リスト -->
+        <section>
+            <h2 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                買い物履歴
+            </h2>
+            <div id="history-list" class="space-y-2.5">
+                <!-- JavaScriptで動的生成 -->
+            </div>
+        </section>
+
+        <!-- 全データリセット -->
+        <div class="mt-10 text-center">
+            <button onclick="resetData()" class="text-[11px] text-gray-400 hover:text-red-500 underline px-4 py-2 transition-colors">
+                すべてのデータをリセット
+            </button>
+        </div>
+    </main>
+
+    <script>
+        const APPS = {
+            aeon:    { name: 'AEON Pay', main: 'text-fuchsia-700', bg: 'bg-fuchsia-50', border: 'border-fuchsia-700', fill: 'bg-fuchsia-700' },
+            paypay:  { name: 'PayPay',   main: 'text-red-500',     bg: 'bg-red-50',     border: 'border-red-500',     fill: 'bg-red-500' },
+            rakuten: { name: '楽天ペイ', main: 'text-red-700',     bg: 'bg-red-50',     border: 'border-red-700',     fill: 'bg-red-700' },
+            aupay:   { name: 'au PAY',   main: 'text-orange-500',  bg: 'bg-orange-50',  border: 'border-orange-500',  fill: 'bg-orange-500' }
+        };
+        const MAX_LIMIT = 2500;
+
+        let historyData = JSON.parse(localStorage.getItem('kanatoku_data')) || [];
+
+        function setTodayDate() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            document.getElementById('date').value = `${yyyy}-${mm}-${dd}`;
+        }
+
+        function saveData() {
+            localStorage.setItem('kanatoku_data', JSON.stringify(historyData));
+        }
+
+        function getTotals() {
+            let totals = { aeon: 0, paypay: 0, rakuten: 0, aupay: 0 };
+            historyData.forEach(item => {
+                if (totals[item.app] !== undefined) {
+                    totals[item.app] += item.cashback;
+                }
+            });
+            return totals;
+        }
+
+        function render() {
+            const totals = getTotals();
+            let grandTotal = 0;
+
+            const container = document.getElementById('status-container');
+            container.innerHTML = '';
+            
+            for (const [key, app] of Object.entries(APPS)) {
+                const total = totals[key] || 0;
+                const remain = MAX_LIMIT - total;
+                const percent = Math.min(100, (total / MAX_LIMIT) * 100);
+                const isMax = remain === 0;
+                grandTotal += total;
+
+                container.innerHTML += `
+                    <div class="bg-white rounded-xl shadow-sm p-3.5 border-l-[3px] ${app.border} relative overflow-hidden flex flex-col justify-between">
+                        <div class="text-[13px] font-bold text-gray-700">${app.name}</div>
+                        <div class="mt-2 flex justify-between items-end">
+                            <div class="text-[10px] text-gray-400 font-bold">獲得</div>
+                            <div class="text-base font-extrabold text-gray-800 leading-none">${total.toLocaleString()}<span class="text-[10px] font-normal ml-0.5 text-gray-500">円</span></div>
+                        </div>
+                        <div class="mt-1 flex justify-between items-end">
+                            <div class="text-[10px] text-gray-400 font-bold">残り</div>
+                            <div class="text-sm font-bold ${isMax ? 'text-gray-300' : app.main} leading-none">${remain.toLocaleString()}<span class="text-[10px] font-normal ml-0.5">円</span></div>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-1.5 mt-3">
+                            <div class="${app.fill} h-1.5 rounded-full transition-all duration-700 ease-out" style="width: ${percent}%"></div>
+                        </div>
+                        ${isMax ? `<div class="absolute top-2.5 right-2.5 ${app.fill} text-white text-[9px] font-bold px-1.5 py-0.5 rounded shadow-sm">上限達成</div>` : ''}
+                    </div>
+                `;
+            }
+
+            document.getElementById('grand-total').textContent = grandTotal.toLocaleString();
+
+            const list = document.getElementById('history-list');
+            list.innerHTML = '';
+            
+            if (historyData.length === 0) {
+                list.innerHTML = '<div class="text-center text-gray-400 py-10 text-xs bg-white rounded-2xl shadow-sm border border-gray-100">まだ記録はありません</div>';
+            } else {
+                historyData.forEach(item => {
+                    const appInfo = APPS[item.app];
+                    const displayDate = item.date.replace(/-/g, '/');
+                    const shopDisplay = item.shop ? `<span class="text-xs text-gray-500 font-bold ml-2 truncate max-w-[120px] inline-block align-middle">${item.shop}</span>` : '';
+                    // 過去のデータでrateがない場合は10%として表示
+                    const rateDisplay = item.rate || 10; 
+
+                    list.innerHTML += `
+                        <div class="bg-white p-3.5 rounded-xl shadow-sm flex justify-between items-center border border-gray-50">
+                            <div class="min-w-0 flex-1 pr-2">
+                                <div class="flex items-center mb-1.5">
+                                    <span class="text-[10px] text-gray-400 font-mono">${displayDate}</span>
+                                    ${shopDisplay}
+                                </div>
+                                <div class="flex items-center gap-1.5 flex-wrap">
+                                    <span class="text-[10px] font-bold ${appInfo.main} ${appInfo.bg} px-1.5 py-0.5 rounded border ${appInfo.border} border-opacity-30 whitespace-nowrap">${appInfo.name}</span>
+                                    <span class="text-[13px] text-gray-700 font-bold truncate">決済: ${item.amount.toLocaleString()}円</span>
+                                    <span class="text-[9px] font-bold ${rateDisplay === 20 ? 'text-emerald-500 bg-emerald-50' : 'text-indigo-500 bg-indigo-50'} px-1 py-0.5 rounded border ${rateDisplay === 20 ? 'border-emerald-200' : 'border-indigo-200'}">${rateDisplay}%還元</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-1.5 flex-shrink-0">
+                                <div class="text-right">
+                                    <div class="text-[9px] text-gray-400 font-bold">還元額</div>
+                                    <div class="text-sm font-extrabold text-emerald-500">+${item.cashback.toLocaleString()}</div>
+                                </div>
+                                <button class="text-gray-300 hover:text-red-500 p-2 rounded-lg bg-slate-50 active:bg-red-50 transition-colors ml-1" onclick="deleteRecord('${item.id}')" aria-label="削除">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+        }
+
+        function addRecord(app, amount, date, shop, rate) {
+            const totals = getTotals();
+            const currentTotal = totals[app];
+
+            if (currentTotal >= MAX_LIMIT) {
+                alert('すでにこのアプリの還元上限（2,500円）に達しています。');
+                return;
+            }
+
+            // 選んだ還元率で計算
+            let rawCashback = Math.floor(amount * (rate / 100));
+            if (rawCashback === 0) {
+                alert('還元額が0円です。');
+                return;
+            }
+
+            let actualCashback = rawCashback;
+            if (currentTotal + rawCashback > MAX_LIMIT) {
+                actualCashback = MAX_LIMIT - currentTotal;
+                alert(`上限に達するため、超過分は切り捨てられ、還元額を ${actualCashback}円 として記録しました。`);
+            }
+
+            const record = {
+                id: Date.now().toString(),
+                date: date,
+                shop: shop.trim(),
+                app: app,
+                amount: amount,
+                cashback: actualCashback,
+                rate: rate // 還元率も保存する
+            };
+
+            historyData.push(record);
+            historyData.sort((a, b) => new Date(b.date) - new Date(a.date) || b.id - a.id);
+            
+            saveData();
+            render();
+        }
+
+        window.deleteRecord = function(id) {
+            if(confirm('この履歴を削除してもよろしいですか？')) {
+                historyData = historyData.filter(item => item.id !== id);
+                saveData();
+                render();
+            }
+        };
+
+        window.resetData = function() {
+            if(confirm('【警告】すべてのデータを完全に削除します。本当によろしいですか？')) {
+                historyData = [];
+                saveData();
+                render();
+            }
+        };
+
+        document.getElementById('record-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const app = document.querySelector('input[name="app_select"]:checked').value;
+            const rate = parseInt(document.querySelector('input[name="rate_select"]:checked').value, 10);
+            const amountInput = document.getElementById('amount');
+            const dateInput = document.getElementById('date');
+            const shopInput = document.getElementById('shop');
+            
+            const amount = parseInt(amountInput.value, 10);
+            const date = dateInput.value;
+            const shop = shopInput.value;
+
+            if (isNaN(amount) || amount <= 0) {
+                alert('正しい金額を入力してください。');
+                return;
+            }
+
+            addRecord(app, amount, date, shop, rate);
+            
+            amountInput.value = '';
+            shopInput.value = '';
+            setTodayDate();
+            // 還元率の選択をデフォルト(10%)に戻す
+            document.querySelector('input[name="rate_select"][value="10"]').checked = true;
+            
+            amountInput.blur();
+            shopInput.blur();
+        });
+
+        setTodayDate();
+        render();
+    </script>
+</body>
+</html>
