@@ -6,7 +6,6 @@
     <title>ぴこさんのかなトク！管理</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- アイコン（カート🛒）の設定 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text y='72' x='15' font-size='65'>🛒</text></svg>">
     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text y='72' x='15' font-size='65'>🛒</text></svg>">
     <link rel="manifest" href="data:application/json,{'name':'かなトク！管理','short_name':'かなトク！','start_url':'.','display':'standalone','icons':[{'src':'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' rx=\'22\' fill=\'%236366f1\'/><text y=\'72\' x=\'15\' font-size=\'65\'>🛒</text></svg>','sizes':'192x192','type':'image/svg+xml'}]}">
@@ -19,7 +18,6 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-24">
 
-    <!-- ヘッダー（合計獲得還元額） -->
     <header class="bg-white shadow-sm sticky top-0 z-10 p-4 border-b border-gray-100">
         <h1 class="text-center text-[13px] font-bold text-gray-500 mb-1">ぴこさんのかなトク！ 総合計獲得還元額</h1>
         <div class="text-center text-4xl font-extrabold text-indigo-600 tracking-tight">
@@ -28,7 +26,6 @@
     </header>
 
     <main class="p-4 max-w-md mx-auto">
-        <!-- アプリ別ステータス -->
         <section class="mb-6">
             <h2 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
@@ -38,11 +35,9 @@
                 アプリ別還元状況
             </h2>
             <div id="status-container" class="grid grid-cols-2 gap-3">
-                <!-- JavaScriptで動的生成 -->
-            </div>
+                </div>
         </section>
 
-        <!-- 入力フォーム -->
         <section class="bg-white rounded-2xl shadow-sm p-5 mb-6 border border-gray-100">
             <h2 class="text-sm font-bold text-gray-600 mb-4 flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
@@ -51,7 +46,6 @@
                 買い物を記録する
             </h2>
             <form id="record-form">
-                <!-- 決済アプリ選択 -->
                 <div class="mb-4">
                     <label class="block text-xs font-bold text-gray-500 mb-2">決済アプリを選択</label>
                     <div class="grid grid-cols-2 gap-2">
@@ -82,7 +76,6 @@
                     </div>
                 </div>
 
-                <!-- 還元率の選択を追加 -->
                 <div class="mb-4">
                     <label class="block text-xs font-bold text-gray-500 mb-2">店舗の還元率</label>
                     <div class="flex gap-2">
@@ -101,7 +94,6 @@
                     </div>
                 </div>
 
-                <!-- 日付と店名（横並び） -->
                 <div class="grid grid-cols-2 gap-3 mb-4">
                     <div>
                         <label class="block text-xs font-bold text-gray-500 mb-1.5" for="date">お買い物日</label>
@@ -115,7 +107,6 @@
                     </div>
                 </div>
 
-                <!-- 金額 -->
                 <div class="mb-5">
                     <label class="block text-xs font-bold text-gray-500 mb-1.5" for="amount">買い物金額（税込）</label>
                     <div class="relative">
@@ -131,7 +122,26 @@
             </form>
         </section>
 
-        <!-- 履歴リスト -->
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 mb-6">
+            <h2 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+                対象店舗を調べる
+            </h2>
+            <div class="grid grid-cols-2 gap-2.5">
+                <a href="https://www.kanatokucpn.pref.kanagawa.jp/" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center gap-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 border border-indigo-100 font-bold py-3 rounded-xl text-xs transition-colors">
+                    🌐 かなトク！公式
+                </a>
+                <a href="https://paypay.ne.jp/event/kanagawa-pref/" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center gap-1 bg-red-50 hover:bg-red-100 text-red-500 border border-red-100 font-bold py-3 rounded-xl text-xs transition-colors">
+                    🅿️ PayPay 公式解説
+                </a>
+            </div>
+            <p class="text-[10px] text-gray-400 mt-3 leading-relaxed">
+                ※楽天ペイやau PAY、AEON Payの対象店舗は、上記公式サイトの一覧か、各アプリ内の「使えるお店（マップ）」機能から確認するのが一番確実です。
+            </p>
+        </section>
+
         <section>
             <h2 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
@@ -140,11 +150,9 @@
                 買い物履歴
             </h2>
             <div id="history-list" class="space-y-2.5">
-                <!-- JavaScriptで動的生成 -->
-            </div>
+                </div>
         </section>
 
-        <!-- 全データリセット -->
         <div class="mt-10 text-center">
             <button onclick="resetData()" class="text-[11px] text-gray-400 hover:text-red-500 underline px-4 py-2 transition-colors">
                 すべてのデータをリセット
@@ -230,7 +238,6 @@
                     const appInfo = APPS[item.app];
                     const displayDate = item.date.replace(/-/g, '/');
                     const shopDisplay = item.shop ? `<span class="text-xs text-gray-500 font-bold ml-2 truncate max-w-[120px] inline-block align-middle">${item.shop}</span>` : '';
-                    // 過去のデータでrateがない場合は10%として表示
                     const rateDisplay = item.rate || 10; 
 
                     list.innerHTML += `
@@ -272,7 +279,6 @@
                 return;
             }
 
-            // 選んだ還元率で計算
             let rawCashback = Math.floor(amount * (rate / 100));
             if (rawCashback === 0) {
                 alert('還元額が0円です。');
@@ -292,7 +298,7 @@
                 app: app,
                 amount: amount,
                 cashback: actualCashback,
-                rate: rate // 還元率も保存する
+                rate: rate
             };
 
             historyData.push(record);
@@ -341,7 +347,6 @@
             amountInput.value = '';
             shopInput.value = '';
             setTodayDate();
-            // 還元率の選択をデフォルト(10%)に戻す
             document.querySelector('input[name="rate_select"][value="10"]').checked = true;
             
             amountInput.blur();
