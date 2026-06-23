@@ -5,16 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ぴこさんのかなトク！管理</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- アイコン（カート🛒）の設定 -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text y='72' x='15' font-size='65'>🛒</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text y='72' x='15' font-size='65'>🛒</text></svg>">
+    <link rel="manifest" href="data:application/json,{'name':'かなトク！管理','short_name':'かなトク！','start_url':'.','display':'standalone','icons':[{'src':'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' rx=\'22\' fill=\'%236366f1\'/><text y=\'72\' x=\'15\' font-size=\'65\'>🛒</text></svg>','sizes':'192x192','type':'image/svg+xml'}]}">
+
     <style>
-        /* iOSでのダブルタップ拡大防止と、入力フィールドのズーム防止 */
         body { touch-action: manipulation; }
-        input[type="number"] { font-size: 16px; }
-        /* スクロールバー非表示（UIをスッキリさせるため） */
+        input[type="number"], input[type="text"], input[type="date"] { font-size: 16px; }
         ::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased pb-24">
 
+    <!-- ヘッダー（合計獲得還元額） -->
     <header class="bg-white shadow-sm sticky top-0 z-10 p-4 border-b border-gray-100">
         <h1 class="text-center text-[13px] font-bold text-gray-500 mb-1">ぴこさんのかなトク！ 総合計獲得還元額</h1>
         <div class="text-center text-4xl font-extrabold text-indigo-600 tracking-tight">
@@ -23,6 +28,7 @@
     </header>
 
     <main class="p-4 max-w-md mx-auto">
+        <!-- アプリ別ステータス -->
         <section class="mb-6">
             <h2 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
@@ -32,9 +38,11 @@
                 アプリ別還元状況
             </h2>
             <div id="status-container" class="grid grid-cols-2 gap-3">
-                </div>
+                <!-- JavaScriptで動的生成 -->
+            </div>
         </section>
 
+        <!-- 入力フォーム -->
         <section class="bg-white rounded-2xl shadow-sm p-5 mb-6 border border-gray-100">
             <h2 class="text-sm font-bold text-gray-600 mb-4 flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
@@ -43,51 +51,87 @@
                 買い物を記録する
             </h2>
             <form id="record-form">
-                <div class="mb-5">
-                    <label class="block text-xs font-bold text-gray-500 mb-2.5">決済アプリを選択</label>
-                    <div class="grid grid-cols-2 gap-2.5">
+                <!-- 決済アプリ選択 -->
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-gray-500 mb-2">決済アプリを選択</label>
+                    <div class="grid grid-cols-2 gap-2">
                         <label class="cursor-pointer relative">
                             <input type="radio" name="app_select" value="aeon" class="peer sr-only" checked>
-                            <div class="rounded-xl border-2 border-gray-100 py-3 text-center peer-checked:border-fuchsia-700 peer-checked:bg-fuchsia-50 transition-all active:scale-95">
-                                <div class="font-bold text-sm text-gray-500 peer-checked:text-fuchsia-700">AEON Pay</div>
+                            <div class="rounded-xl border-2 border-gray-100 py-2.5 text-center peer-checked:border-fuchsia-700 peer-checked:bg-fuchsia-50 transition-all active:scale-95">
+                                <div class="font-bold text-xs text-gray-500 peer-checked:text-fuchsia-700">AEON Pay</div>
                             </div>
                         </label>
                         <label class="cursor-pointer relative">
                             <input type="radio" name="app_select" value="paypay" class="peer sr-only">
-                            <div class="rounded-xl border-2 border-gray-100 py-3 text-center peer-checked:border-red-500 peer-checked:bg-red-50 transition-all active:scale-95">
-                                <div class="font-bold text-sm text-gray-500 peer-checked:text-red-500">PayPay</div>
+                            <div class="rounded-xl border-2 border-gray-100 py-2.5 text-center peer-checked:border-red-500 peer-checked:bg-red-50 transition-all active:scale-95">
+                                <div class="font-bold text-xs text-gray-500 peer-checked:text-red-500">PayPay</div>
                             </div>
                         </label>
                         <label class="cursor-pointer relative">
                             <input type="radio" name="app_select" value="rakuten" class="peer sr-only">
-                            <div class="rounded-xl border-2 border-gray-100 py-3 text-center peer-checked:border-red-700 peer-checked:bg-red-50 transition-all active:scale-95">
-                                <div class="font-bold text-sm text-gray-500 peer-checked:text-red-700">楽天ペイ</div>
+                            <div class="rounded-xl border-2 border-gray-100 py-2.5 text-center peer-checked:border-red-700 peer-checked:bg-red-50 transition-all active:scale-95">
+                                <div class="font-bold text-xs text-gray-500 peer-checked:text-red-700">楽天ペイ</div>
                             </div>
                         </label>
                         <label class="cursor-pointer relative">
                             <input type="radio" name="app_select" value="aupay" class="peer sr-only">
-                            <div class="rounded-xl border-2 border-gray-100 py-3 text-center peer-checked:border-orange-500 peer-checked:bg-orange-50 transition-all active:scale-95">
-                                <div class="font-bold text-sm text-gray-500 peer-checked:text-orange-500">au PAY</div>
+                            <div class="rounded-xl border-2 border-gray-100 py-2.5 text-center peer-checked:border-orange-500 peer-checked:bg-orange-50 transition-all active:scale-95">
+                                <div class="font-bold text-xs text-gray-500 peer-checked:text-orange-500">au PAY</div>
                             </div>
                         </label>
                     </div>
                 </div>
 
-                <div class="mb-6">
-                    <label class="block text-xs font-bold text-gray-500 mb-2.5" for="amount">買い物金額（税込）</label>
+                <!-- 還元率の選択を追加 -->
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-gray-500 mb-2">店舗の還元率</label>
+                    <div class="flex gap-2">
+                        <label class="cursor-pointer relative flex-1">
+                            <input type="radio" name="rate_select" value="10" class="peer sr-only" checked>
+                            <div class="rounded-xl border-2 border-gray-100 py-2 text-center peer-checked:border-indigo-500 peer-checked:bg-indigo-50 transition-all active:scale-95">
+                                <div class="font-bold text-sm text-gray-500 peer-checked:text-indigo-600">10%還元</div>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative flex-1">
+                            <input type="radio" name="rate_select" value="20" class="peer sr-only">
+                            <div class="rounded-xl border-2 border-gray-100 py-2 text-center peer-checked:border-emerald-500 peer-checked:bg-emerald-50 transition-all active:scale-95">
+                                <div class="font-bold text-sm text-gray-500 peer-checked:text-emerald-600">20%還元</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 日付と店名（横並び） -->
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1.5" for="date">お買い物日</label>
+                        <input type="date" id="date" required
+                            class="w-full bg-slate-50 border border-gray-200 rounded-xl p-3 text-sm font-bold text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-500 mb-1.5" for="shop">店舗名 <span class="text-[10px] font-normal text-gray-400">(任意)</span></label>
+                        <input type="text" id="shop" placeholder="例: 〇〇スーパー"
+                            class="w-full bg-slate-50 border border-gray-200 rounded-xl p-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-gray-300">
+                    </div>
+                </div>
+
+                <!-- 金額 -->
+                <div class="mb-5">
+                    <label class="block text-xs font-bold text-gray-500 mb-1.5" for="amount">買い物金額（税込）</label>
                     <div class="relative">
                         <input type="number" id="amount" pattern="\d*" placeholder="例: 1500" required
-                            class="w-full bg-slate-50 border border-gray-200 rounded-xl p-4 pr-10 text-xl font-bold text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-gray-300 placeholder:font-normal">
+                            class="w-full bg-slate-50 border border-gray-200 rounded-xl p-3.5 pr-10 text-lg font-bold text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all placeholder:text-gray-300 placeholder:font-normal">
                         <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-bold">円</span>
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-4 rounded-xl shadow-md shadow-indigo-200 transition-all active:scale-[0.98] active:shadow-none flex justify-center items-center gap-2">
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-md shadow-indigo-200 transition-all active:scale-[0.98] active:shadow-none flex justify-center items-center gap-2">
                     記録する
                 </button>
             </form>
         </section>
 
+        <!-- 履歴リスト -->
         <section>
             <h2 class="text-sm font-bold text-gray-600 mb-3 flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 text-indigo-500">
@@ -96,9 +140,11 @@
                 買い物履歴
             </h2>
             <div id="history-list" class="space-y-2.5">
-                </div>
+                <!-- JavaScriptで動的生成 -->
+            </div>
         </section>
 
+        <!-- 全データリセット -->
         <div class="mt-10 text-center">
             <button onclick="resetData()" class="text-[11px] text-gray-400 hover:text-red-500 underline px-4 py-2 transition-colors">
                 すべてのデータをリセット
@@ -107,7 +153,6 @@
     </main>
 
     <script>
-        // アプリの定義とデザイン設定
         const APPS = {
             aeon:    { name: 'AEON Pay', main: 'text-fuchsia-700', bg: 'bg-fuchsia-50', border: 'border-fuchsia-700', fill: 'bg-fuchsia-700' },
             paypay:  { name: 'PayPay',   main: 'text-red-500',     bg: 'bg-red-50',     border: 'border-red-500',     fill: 'bg-red-500' },
@@ -116,15 +161,20 @@
         };
         const MAX_LIMIT = 2500;
 
-        // LocalStorageからデータを取得
         let historyData = JSON.parse(localStorage.getItem('kanatoku_data')) || [];
 
-        // データを保存
+        function setTodayDate() {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            document.getElementById('date').value = `${yyyy}-${mm}-${dd}`;
+        }
+
         function saveData() {
             localStorage.setItem('kanatoku_data', JSON.stringify(historyData));
         }
 
-        // アプリごとの合計を計算
         function getTotals() {
             let totals = { aeon: 0, paypay: 0, rakuten: 0, aupay: 0 };
             historyData.forEach(item => {
@@ -135,12 +185,10 @@
             return totals;
         }
 
-        // 画面の描画
         function render() {
             const totals = getTotals();
             let grandTotal = 0;
 
-            // 1. ステータスカードの描画
             const container = document.getElementById('status-container');
             container.innerHTML = '';
             
@@ -170,10 +218,8 @@
                 `;
             }
 
-            // 2. 総合計の更新
             document.getElementById('grand-total').textContent = grandTotal.toLocaleString();
 
-            // 3. 履歴リストの描画
             const list = document.getElementById('history-list');
             list.innerHTML = '';
             
@@ -182,16 +228,25 @@
             } else {
                 historyData.forEach(item => {
                     const appInfo = APPS[item.app];
+                    const displayDate = item.date.replace(/-/g, '/');
+                    const shopDisplay = item.shop ? `<span class="text-xs text-gray-500 font-bold ml-2 truncate max-w-[120px] inline-block align-middle">${item.shop}</span>` : '';
+                    // 過去のデータでrateがない場合は10%として表示
+                    const rateDisplay = item.rate || 10; 
+
                     list.innerHTML += `
                         <div class="bg-white p-3.5 rounded-xl shadow-sm flex justify-between items-center border border-gray-50">
-                            <div>
-                                <div class="text-[10px] text-gray-400 font-mono mb-1.5">${item.date}</div>
-                                <div class="flex items-center gap-2">
+                            <div class="min-w-0 flex-1 pr-2">
+                                <div class="flex items-center mb-1.5">
+                                    <span class="text-[10px] text-gray-400 font-mono">${displayDate}</span>
+                                    ${shopDisplay}
+                                </div>
+                                <div class="flex items-center gap-1.5 flex-wrap">
                                     <span class="text-[10px] font-bold ${appInfo.main} ${appInfo.bg} px-1.5 py-0.5 rounded border ${appInfo.border} border-opacity-30 whitespace-nowrap">${appInfo.name}</span>
-                                    <span class="text-[13px] text-gray-700 font-bold">決済: ${item.amount.toLocaleString()}円</span>
+                                    <span class="text-[13px] text-gray-700 font-bold truncate">決済: ${item.amount.toLocaleString()}円</span>
+                                    <span class="text-[9px] font-bold ${rateDisplay === 20 ? 'text-emerald-500 bg-emerald-50' : 'text-indigo-500 bg-indigo-50'} px-1 py-0.5 rounded border ${rateDisplay === 20 ? 'border-emerald-200' : 'border-indigo-200'}">${rateDisplay}%還元</span>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-1.5">
+                            <div class="flex items-center gap-1.5 flex-shrink-0">
                                 <div class="text-right">
                                     <div class="text-[9px] text-gray-400 font-bold">還元額</div>
                                     <div class="text-sm font-extrabold text-emerald-500">+${item.cashback.toLocaleString()}</div>
@@ -208,8 +263,7 @@
             }
         }
 
-        // 記録を追加
-        function addRecord(app, amount) {
+        function addRecord(app, amount, date, shop, rate) {
             const totals = getTotals();
             const currentTotal = totals[app];
 
@@ -218,43 +272,36 @@
                 return;
             }
 
-            // 10%計算（小数点以下切り捨て）
-            let rawCashback = Math.floor(amount / 10);
+            // 選んだ還元率で計算
+            let rawCashback = Math.floor(amount * (rate / 100));
             if (rawCashback === 0) {
-                alert('還元額が0円です。（10円未満の決済）');
+                alert('還元額が0円です。');
                 return;
             }
 
             let actualCashback = rawCashback;
-            // 上限超過チェック
             if (currentTotal + rawCashback > MAX_LIMIT) {
                 actualCashback = MAX_LIMIT - currentTotal;
                 alert(`上限に達するため、超過分は切り捨てられ、還元額を ${actualCashback}円 として記録しました。`);
             }
 
-            // 日付フォーマット取得 (YYYY/MM/DD HH:mm)
-            const now = new Date();
-            const dateStr = now.getFullYear() + '/' + 
-                            String(now.getMonth() + 1).padStart(2, '0') + '/' + 
-                            String(now.getDate()).padStart(2, '0') + ' ' + 
-                            String(now.getHours()).padStart(2, '0') + ':' + 
-                            String(now.getMinutes()).padStart(2, '0');
-
             const record = {
                 id: Date.now().toString(),
-                date: dateStr,
+                date: date,
+                shop: shop.trim(),
                 app: app,
                 amount: amount,
-                cashback: actualCashback
+                cashback: actualCashback,
+                rate: rate // 還元率も保存する
             };
 
-            // 最新の履歴を一番上に追加
-            historyData.unshift(record);
+            historyData.push(record);
+            historyData.sort((a, b) => new Date(b.date) - new Date(a.date) || b.id - a.id);
+            
             saveData();
             render();
         }
 
-        // 履歴の削除
         window.deleteRecord = function(id) {
             if(confirm('この履歴を削除してもよろしいですか？')) {
                 historyData = historyData.filter(item => item.id !== id);
@@ -263,7 +310,6 @@
             }
         };
 
-        // 全データリセット
         window.resetData = function() {
             if(confirm('【警告】すべてのデータを完全に削除します。本当によろしいですか？')) {
                 historyData = [];
@@ -272,27 +318,37 @@
             }
         };
 
-        // フォーム送信時の処理
         document.getElementById('record-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const app = document.querySelector('input[name="app_select"]:checked').value;
+            const rate = parseInt(document.querySelector('input[name="rate_select"]:checked').value, 10);
             const amountInput = document.getElementById('amount');
+            const dateInput = document.getElementById('date');
+            const shopInput = document.getElementById('shop');
+            
             const amount = parseInt(amountInput.value, 10);
+            const date = dateInput.value;
+            const shop = shopInput.value;
 
             if (isNaN(amount) || amount <= 0) {
                 alert('正しい金額を入力してください。');
                 return;
             }
 
-            addRecord(app, amount);
+            addRecord(app, amount, date, shop, rate);
             
-            // フォームのリセットとキーボードを閉じる処理
             amountInput.value = '';
+            shopInput.value = '';
+            setTodayDate();
+            // 還元率の選択をデフォルト(10%)に戻す
+            document.querySelector('input[name="rate_select"][value="10"]').checked = true;
+            
             amountInput.blur();
+            shopInput.blur();
         });
 
-        // 初回描画
+        setTodayDate();
         render();
     </script>
 </body>
